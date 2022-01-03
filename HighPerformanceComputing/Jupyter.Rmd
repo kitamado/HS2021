@@ -1,0 +1,160 @@
+---
+title: "jupyter"
+author: "Science IT Support(ScITS)"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+Jupyter notebooks are interactive computing documents especially popular in data intensive fields (data science).
+
+By their nature they are a great tool for:
+  - Easy **design** of analysis workflows
+  - **Documenting** code / workflows and increasing their reproducibility
+  - Exploiting **cloud computing** resources 
+
+## Used in academic research and in companies
+
+Bloomberg, PANGEO is the first and foremost a community promoting open, reproductible and scalable science.
+
+
+## Course content
+
+1. Interactive computing - Jupyter
+2. Resources - Run jupyter on HPC/cloud
+3. Publish - Github and Zenodo to publish code
+4. Reproducible code - Renku/Binder
+
+## Why reproducible code?
+
+### Levels of reproducibility: minimal
+Computations only described. Maybe possible to reconstruct at great pain.
+
+Impossible to verify.
+
+### Levels of reproducibility: upon request
+Computations only described.
+
+In principle possible to reconstruct.
+  
+  - The Science Journal policy (must be available)
+  - Answers one gets from authors (not prefer sharing)
+  
+### Levels of reproducibility: complete code
+Possible to reconstruct.
+
+Impossible to reproduce exactly (e.g. package versions missing)
+
+### Levels of reproducibility: reproducible code
+Possible to reproduce exactly (via container technology)
+
+### The future: eLife example
+
+## Jupyter Notebooks
+
+### Interactive computing with Jupyter
+  - Write and execute code
+  - Display images and plots
+  - Document every step with formatted text (Markdwon)
+  - Excute code step by step
+  - Call other software from notebooks (e.g. ilastik)
+  
+### What is a Jupyter notebook?
+
+A **text** ﬁle (easily sent around) Rendered by Jupyter in the **browser** Split into sections called **cells**
+
+Cells can contain:
+  - Code
+  - Formatted text
+  - Rich output
+  
+### How and where does a notebook compute
+
+Notebooks displayed in **brower** --> Sends computations 
+<-- Sends result  Computations done by **kernel**. Kernel can be **local**(laptop) or **remote**(cluster, Google etc.)
+
+For you, the user, "where it runs" doesn't affect the interface
+
+### Renku notebook
+
+#### Notebook cells
+  - Code broken into chunks: cells
+  - Variables defined for whole notebook
+  - Only the order of cell excution matters
+  - **Good practive: Top-down order**
+  - The cell type can be switched from Code to Text(Markdown)
+  - Possible to run all cells are part of a notebook
+  - **Toolbar** can be used to:
+    - Copy/paste cells
+    - Add new cells
+    - Run a cell or stop execution
+    - Change cell type from code to markdown
+    - More options in menus
+
+#### Notebook handling
+Right-click on notebook in panel to: Rename, Download, Shut down, Copy, Duplicate, etc.
+
+#### The notebook kernel
+Notebook content does not depend on kernel.
+
+Variables conserved as long as kernel is ON (green dot).
+
+Kernel can be restarted.
+
+  - Interrupt long calculation
+  - Re-initialize variables 
+  
+**Good practice: periodically restart kernel to avoid “*strange*”  states**
+  
+### Jupyter cheat sheet
+![](./cheatsheet.png){width=70%}
+
+#### Mixing languages in Jupyter: command line
+
+  - Exclamation mark: `!pwd`
+  - Use "magic" commands: 
+  
+    ```{}
+    %%bash
+    cd myfolder
+    ls
+    ```
+    
+#### Beyond notebooks
+
+  - Interactive features with ipywidgets:
+  - Creating interactive web-apps with voilà:
+  - Create interactive online books with Jupyter:
+  - Running a multi-user Jupyter with JupyterHub (e.g. The Littlest JupyterHub)
+  
+#### Other public Jupyter resources
+
+  - With switch-AAI login (same as Ilias login): EPFL: https://noto.epﬂ.ch/ Jupyter running on EPFL servers, fully customizable environments With switch-edu or GitHub:
+  - Swiss Data Science Center: https://renkulab.io/ Powerful combination of Jupyter, GitHub and data repository 
+  - With Kaggle (ML competition site): https://www.kaggle.com/
+  - Access to interesting datasets, GPU etc.
+  
+#### Run Jupyter locally: Docker
+There are images to run Jupyter e.g.
+
+- To install: `docker pull jupyter/datascience-notebook`
+- Or directly install and run: 
+  ```
+  docker run -p 8885:8888 
+  jupyter/datascience-notebook
+  ```
+- Browse to http://localhost:8885/lab
+
+### Jupyter on cluster
+### Jupyter in the cloud: google Colab compute Engine
+## Code repository and management: GitHub
+
+## Sharing files: from static to dynamic
+### MyBinder
+## Preserve and cite: Zenode
+
+## Cheat sheet and additional info
