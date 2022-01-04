@@ -1,0 +1,162 @@
+---
+title: "IBU HPC Infrastructure"
+author: "Shunyu Wu"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+Interfaculty Bioinformatics Unit(IBU)
+
+## HPC = High Performance Computing
+
+Using large amounts of power
+
+  - over a short time(hours)(HPC): weather forecast, genetic diagnostic
+  - over a long time(months)(High Throughput Computing, HTC): Astrophysics, climate research
+  - grid computing: Particle Physics at CERN
+
+### History
+  - Cray-1, 1976, 160 MFLOPS | Smartphone, 2013: 1GFLOPS
+  - IBM BlueGene/P, 2007, 23 TFLOPS, 65'537 CPUs
+  - Cray, XC50, 2017, 27 PFLOPS, 133'716 CPUs(Piz Daint, CSCS)
+  - Ubelix, 6300 CPUs
+  - IBU Cluster, 1888 CPUs
+  - My Laptop, 8 CPUs
+
+
+### Features
+
+#### Operating System
+Operating systems used on top 500 supercomputers(wikipedia): gradually turn from Unix to Linux, very rare K.A./Ver.,   BSD, Windows, Mac.
+
+#### Queuing System
+- Concurrency on resources(CPUs, RAM) for users and job
+- Optimal usage of resources
+
+#### Storage
+- Large capacites
+  - 1 Hard Disk: 16TB
+  - Piz Dint: 8'000 TB
+  - Ubelix: 3'000 TB
+  - IBU: 1'000 TB
+- High number of files
+  - typically: 100's of millions of files
+  
+#### Network
+- Nodes Interconnect
+  - Typical: 10-56 Gbit/s
+  - Network type: TCP/IP or infiniband
+- Outbound connection
+  - Typical: 10 GBit/s
+  
+##### Internal Network
+- IBU 40GBit/s switch
+
+#### Chanllenges
+- Electrical Power
+  - Piz Daint: 3MW
+  - IBU: 15kW
+  - My Laptop: 60W
+  - City of Bern: 114MW
+- Cooling
+- Data flow
+  - IBU Cluster: 1PB Data
+  - Uplink: 10 GBit/s (10-50days to transfer)
+  
+## Services
+Rschiny, Sequenceserver, BugFRI, openBIS, Galaxy, Gitlab, Rstudio, IBU Cloud, openProjects, Proxmox VMs
+
+ 
+
+## IBU HPC Linux Cluster
+
+- **Head node = entry point**
+  - ssh binfservms01.unibe.ch
+
+- Cent OS 7
+  - 2 * 6 cores
+  - 64 GB RAM
+  - 1 TB/home
+  - 10 Gbit/s Network uplink
+  
+### Data Storage
+- Total active ~ 400 TB
+  - /home/*username* -> /home 1 TB ms01
+  - /data/projects/pnnn_abcd -> /data 600 TB fs07
+  - /data/users/username -> /data 600 TB fs07
+  - /scratch 
+    - directory local to each node
+    - during job excution: `$SCRATCH`
+    - /scratch/172007
+    - deleted after job completion
+    
+### Backup
+outside <-> von Roll <-> Vetsuisse
+
+- von Roll
+  - IBU HPC Cluster
+  - Ubelix
+  - Research storage
+- Vetsuisse
+  - Sequencers
+  - Ingestion servers
+  - Backup server
+
+### Data Exchange
+![](./data-exchange.png){width="55%"}
+
+### Network
+![](./network.png){width="60%"}
+
+### Compute nodes
+
+binfservas[01-34]: 32 servers, 2048 cores
+
+- `clusterstate.sh`
+
+![](./nodes.png){width="35%"}
+
+
+
+
+## SSH
+
+### Secure channel over an unsercured network
+
+clinet <-> internet <-> server
+
+  - confidentiality
+  - intergrity
+  - authentication
+  
+
+### Cryptography
+#### Symmetric cryptography
+Goal: establish a secured channel => confidentiality + integrity
+
+Needs a Shared Secret: key => needs a Key Exchange Algorithm
+
+##### Key Exchange Algorithm
+Diffe-Hellman
+
+#### Asymmetric cryptography public/private keys pair
+User authentication
+
+Server authentication: same principle, reverse sides
+
+### SSH Uses
+  - interactive sessions (shell)
+  - commands execution on server
+  - data transfer (scp, sftp)
+  - port forwarding
+
+## Take home
+  - protect your ssh private key (passphrase)
+  - use /scratch whenever possible
+  - beware of small files on /projects, /home
+  - organize backups
+  - [ibu-best-practices](https://projects.bioinformatics.unibe.ch/projects/ibu-best-practices/wiki/wiki)
