@@ -1,0 +1,106 @@
+##############################
+# Template for the BASH exam #
+##############################
+
+# YOUR NAME: Shunyu Wu
+# YOUR STUDENT NUMBER: 21-119-631
+
+# When done, upload this file as explained on http://bashexam.netlify.app
+# DON'T FORGET TO SIGN YOUR EXAM SHEET!
+
+##############################
+#   PROVIDE ANSWERS BELOW    #
+##############################
+
+#----------------
+# Question 1
+#----------------
+
+#Q.1a
+able to read: Yoda, JackSparrow
+able to modify: Yoda, ET
+able to excute: JackSparrow
+
+
+#Q.1b
+
+chmod 634 call_home.sh
+##or
+chmod o-x call_home.sh && chmod g+x call_home.sh
+
+#Q.1c
+for i in `seq 1 50`; do mkdir dir${i}; done
+
+#Q.1d
+
+vim 1d.sh
+
+#/bin/bash
+if [ ! -d $1 ]; then mkdir $1 ; echo "Here is directory $1!" > ./$1/$1.txt ; fi
+chmod u+x 1d.sh
+./1d.sh dir1
+cat dir1/dir1.txt
+
+#Q.1e
+while read line; do
+echo `ls -l $line` >> exists.txt 2> fails.txt;
+done < folders.txt
+
+
+#----------------
+# Question 2
+#----------------
+
+#Q.2a
+gunzip -k BanthracisProteome.txt.gz
+awk '$1=="DR" && $2 ~ "PROSITE"' BanthracisProteome.txt | wc -l
+
+#2377
+
+
+#Q.2b
+awk '$1=="DR" && $2 ~ "PROSITE"' BanthracisProteome.txt | tr -s ' ' | cut -d ' ' -f3 | sort | uniq -c | sort -n | tail -n5
+
+     48 PS50110;
+     64 PS50850;
+     88 PS00211;
+     91 PS51186;
+    105 PS50893;
+
+    Thr most abundant are PS50893, PS51186, PS00211, PS50850 and PS50110.
+
+#Q.2c
+awk '$1=="DR" && $2 ~ "PROSITE"' BanthracisProteome.txt | tr -d ';' |  tr -s ' ' | cut -d ' ' -f3,4 | sort | uniq | sed -e 's/' '/\t/g' > prosite.txt
+
+
+#----------------
+# Question 3
+#----------------
+
+#Q.3a
+when a file contains much redundant information(e.g. common patterns), zip will replace them with shortcuts and thus the zipped version is munch smaller than the original.
+
+#Q.3b
+tar -czf allsh.tar *.sh
+
+#Q.3c
+zcat BanthracisProteome.txt.gz | awk '$1=="ID"' | tr [:lower:] [:upper:] > ids.txt.gz
+
+#----------------
+# Question 4
+#----------------
+
+#Q.4a
+
+awk 'l++; {print $0, "(Line", l")"}; END {print "There are",l, "lines in this file"}' example.fastq
+
+#Q.4b
+
+awk 'NR%4==0' example.fastq  
+
+
+#Q.4c
+
+## printf doesn't create a newline
+awk '{if(NR%4==1) {printf $1} else if (NR%4==2) {print " ", $0}}' example.fastq
+
