@@ -1,0 +1,15 @@
+ID:21-119-631
+
+A) IATI is a global initiative to improve the transparency of development and humanitarian resources and their results to address poverty and crises.
+
+https://iatistandard.org/
+
+B)  The Concept of Digital Sustainability
+    1.  Elaborateness, Quality of digital artifacts, Modular architecture and user experience of software; Integrity andnaccuracy of data; Data protection and privacy of systems
+    2. Transparent Structures, Transparency increases trust; Transparency enablesimprovements; Access to source code, specifications, content, or data
+    3. Semantic Information. Absorption of digital knowledge； Machine-readable
+data；Linked data needs metadata； Ontologies and semantics
+    4. 4. Distributed Location; Storage of data on
+multiple locations; Long-term availability of digital artifacts; Peer-to-peer technology for redundancy
+
+They are satisfied. 

@@ -1,0 +1,13 @@
+ID:21-119-631
+
+A) open data relating to genes, diseases, health etc. 
+    1. COVID-19 Switzerland, https://opendata.swiss/en/dataset/covid-19-schweiz
+    2. Ensembl https://www.ensembl.org/info/data/ftp/index.html
+    3. ION http://www.organismnames.com/
+
+B) They provide the fundemental requirements of biology research. The garantee right to free data, promote economic efficiency and innovation.
+
+C) 1. Security: Human life and state security must not be endangered, to solve we should omitting critical data fields
+    2. Data quality: Data quality becomes visible through Open Data Solution: Check data to be released for completeness, accuracy, timeliness, consistency and freedom from errors
+    3. Strategy: Data release must not negatively influence the business model (e.g. basis for trade secrets)
+or financing model (e.g. legal fee obligation) Solution: Data sharing fits the organizational strategy

@@ -1,0 +1,12 @@
+ID:21-119-631
+
+A) Unlike proprietary software, OSS is collaborative, community-oriented and community-driven. So from a business point of view: 
+    1. OSS has ower dependence on manufacturers, better negotiating position
+    2. OSS often has high code quality
+    3. OSS has greater employer attractiveness, motivation for employees
+
+B) Contributing to OSS has high switching costs due to vendor lock-in, and there might be missing features or no suitable open source solutions. Sometimes there is few providers for the open source tools, and hardly any advertising for open source software.
+
+C) In OSS, a project fork happens when developers take a copy of source code from one software package and starts independent development on it, creating a distinct and separate piece of software. 
+
+ A friendly fork is a fork that does not intend to compete, but wants to eventually merge with the original. While unfriendly fork doesn't. Forking is important for open source communities because a central freedom of OSS is what keeps communities vibrant and companies honest.

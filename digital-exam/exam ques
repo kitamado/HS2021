@@ -1,0 +1,50 @@
+Assume you are working a company that participates in an open source project about DNA analytics. Now a competitor is using the open source software and makes a big business out of it. Your boss asks you why the company helps its competitor to succeed. Therefore you have to explain to her how open source communities work:
+
+A) Write 3 reasons from a business point of view why it makes sense to participate in open source communities. (3 points)
+
+B) Describe 3 challenges that arise from contributing to open source software. (3 points)
+
+C) Now your boss has heard that there is the possibility of forking. Explain to her how forking works, describe the differences between friendly and unfriendly forkings. And argue why forking is important for open source communities. (6 points)
+
+Write your answers in complete sentences and upload them in a file called opensource.txt
+
+
+In the lecture, you learned about the benefits and challenges of open data. Please answer the following questions regarding open data that is relevant for bioinformatics:
+
+A) What types of open data are relevant in bioinformatics? Please describe 3 examples and explain why it is important in bioinformatics. Provide links on the Internet for each of the examples. (3 points)
+
+B) What are the specific benefits of this data? For what can it be used? Please explain 3 good reasons why open data makes sense in bioinformatics. (3 points)
+
+B) What are the specific challenges with these examples? And what are possible solutions? Describe the problems and the possibilities to solve them for each of the three examples. (6 points)
+
+Upload your answers in a file called opendata.txt
+
+
+
+You remember the 10 basic conditions for digital sustainability.
+
+A) Provide a specific example of a digital artifact that is relevant for bioinformatics. Explain it and provide links on the Internet. (4 points)
+
+B) Describe in detail 4 conditions of the concept of digital sustainability that are fullfilled or not and explain why. (8 points)
+
+Store your answers in a file called digitalsustainability.txt
+
+
+You are joining the new fancy biotech startup Gene-IT as a software engineer. They organize their code using git with remote repositories on GitLab for good team collaboration. 
+
+A) Fork the public repository on GitLab.com named gene-it (https://gitlab.com/JoelNiklaus/gene-it) to your personal account (it should then be available on https://gitlab.com/<your-username>/gene-it) and paste the link in your solution file. (2 points)
+
+B) Clone your repository locally and integrate a new feature (this can just consist of making a short edit to the README.md file) cleanly (using git branches). Execute and describe your solution textually but also by listing the necessary git commands in the correct order. (8 points)
+
+C) Create a Merge Request to the original repository with a suitable description. (2 points)
+
+Upload your well-structured solution in a file called git.txt.
+
+
+Use the Wikidata Query Service (https://query.wikidata.org) to create a SPARQL query that returns all scientists with the following constraints:
+
+"occupation" is  "computational biologist" or something that is a "subclass of" "computational biologist"
+"educatet at" an institution that has "country" "Switzerland"
+(12 points)
+
+Upload your SPARQL query (only the query, not the result of the query) in a file named sparql.txt.

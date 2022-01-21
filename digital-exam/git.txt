@@ -1,0 +1,25 @@
+ID:21-119-631
+
+A) https://gitlab.com/kitamado/gene-it
+
+
+git branch new_feature
+git checkout new_feature
+
+B)
+# edit content under ## License and add ### Exam todo at last
+
+git status
+git add .
+git commit -m "edit content under ## License and add ### Exam todo at last"
+
+C) 
+git checkout main
+git merge new_feature [or do git merge --no-ff new_feature]
+
+# edit readme add merged
+git add .
+git commit -m "merged new_feature"
+
+git status
+git push origin main
