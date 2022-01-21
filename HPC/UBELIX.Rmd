@@ -1,0 +1,107 @@
+---
+title: "UBELIX  submit.unibe.ch"
+author: "Shunyu Wu"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+## What is a Node?
+
+- Individual “computers” that compose a cluster
+  - Similar components
+- Different type of nodes
+  - Login
+  - CPU compute
+  - GPU compute
+  - Service nodes
+
+## Login Nodes (submitXX)
+
+Which commands are tasks for login nodes:
+
+1. ~~python physics_sim.py~~
+2. make
+3. create_directories.sh
+4. ~~molecular_dynamics_2~~
+5. tar -xzf R-3.3.0.tar.gz
+
+  **! no computation on login nodes**
+
+## UBELIX software
+
+### Module environment
+
+- multiple versions of various packages
+- Preventing unintended interference
+- managed via environment variables
+- `$ module avail`
+  - List available modules
+- `$ module load <module>`
+  - Load specific module
+- `$ module list`
+  - List loaded modules
+- `$ module purge`
+  - Unload all modules
+
+### BioInf Software
+
+Vital-IT provides software for bioinformatics
+
+  - `$ module load vital-it`
+  - `$ module avail`
+
+## SLURM
+
+- SLURM kills jobs, which exceed
+  - memory or time limits!
+  - Smaller and shorter jobs shedule faster
+  - Appropriate values must be determined iteratively:
+  
+1. Make an elaborate guess for the first run
+2. Check runtime and memory usage (mail, sacct)
+3. Adapt values for future invocations of the same job.
+
+  - To be on the save side, add a (few hours) time and (2G) memory
+
+### **Q:** Where is the Output?
+
+- Default: slurm-<jobID>.out
+- stderr and stdout can be split and file names be specified
+
+## Threads vs Tasks
+
+- Threads: (***OpenMP***)
+    - Single executable instance
+    - Spawn and merge threads
+    - **Shared memory**
+    - `#SBATCH --cpus-per-task=<nr>`
+- Tasks: (*MPI*)
+    - Multiple executable instances
+    - Communicate with each other
+    - Distributed memory/multiple nodes
+    - `#SBATCH --ntasks=<nr>`
+
+### Transferring Files to/from the cluster
+
+- wget - Download files from the Internet
+- Transfer files/folders from/to local desktop/laptop
+  
+    ```bash
+    # best practice to pack and compress first:
+    $ tar -zcf <tar_file> <data>
+    # scp [option] source destination
+    [user@local ~] $ scp -r myproject/ <user>@submit.unibe.ch:~/
+    [user@local ~] $ scp <user>@submit.unibe.ch:~/myproject/result.txt .
+    ```
+    
+- `$ rsync -avz <source> <destination>`
+- sftp client (GUI), e.g. FileZilla, MobaXterm, …
+- Different line endings
+  - UNIX: `\n` (newline)
+  - Windows: `\r\n` (carriage return + newline)
+- This might cause a problem!
+- Convert Windows text files to UNIX format
+  - `$ dos2unix <file>`
+- Convert UNIX text files to Windows format
+  - `$ unix2dos <file>`
